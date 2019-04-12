@@ -1,2 +1,2 @@
 # Show-Me-Code
-学习项目:Python3 
+项目:Python3 学习 / 每日一练 
