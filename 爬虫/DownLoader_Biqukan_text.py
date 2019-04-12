@@ -51,11 +51,6 @@ class downloader(object):
             bf = BeautifulSoup(html, "html5lib")
             texts = bf.find_all('div', class_='showtxt')
             if texts:
-                #tlen = len(texts)
-                #slen = len(texts[0])
-                # print(texts)
-                #print("tlen:{}".format(tlen))
-                #print("slen:{}".format(slen))
                 texts = (texts[0].text.replace('\xa0' * 8, '\n\n'))
                 break
             else:
@@ -81,11 +76,11 @@ if __name__ == "__main__":
     dl = downloader()
     dl.get_download_url()
     dl.get_contents(dl.urls[0])
-    """ 
+
     for i in range(dl.nums):
         print(dl.names[i],end=':')
         print(dl.urls[i])
-    """
+
     print("《一念永恒》开始下载:")
     for i in range(dl.nums):
         dl.writer(dl.names[i], '一念永恒.txt',dl.get_contents(dl.urls[i]))
